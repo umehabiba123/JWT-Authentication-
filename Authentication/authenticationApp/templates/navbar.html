@@ -1,0 +1,29 @@
+{% block nav %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top mb-4"> <!-- Added mb-4 class for margin bottom -->
+    <div class="container">
+        <a class="navbar-brand" href="#"
+            style="font-family: 'Arial Black', sans-serif; font-weight: bold; font-size: 24px;">User Authentication</a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                {%if request.user.is_authenticated %}
+
+
+               
+               
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{%url 'user_logout'%}">Logout</a>
+                </li>
+                {%else%}
+               
+                <li class="nav-item   ">
+                   
+                    <a class="nav-link" aria-current="page" href="{%url 'user_login'%}">LOGIN</a>
+                </li>
+                {%endif%}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock nav %}
